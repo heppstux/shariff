@@ -96,7 +96,7 @@ Für den Aufruf von `grunt demo` muss [Grunt CLI](http://gruntjs.com/getting-sta
 | `data-media-url` | Zu teilendes Bild (pinterest) | `null` |
 | `data-orientation` | Anordnung der Buttons. Verfügbar: `horizontal`, `vertical` | `horizontal`  |
 | `data-referrer-track` | Wenn angegeben, wird dieser String an die geteilte URL angehängt. Mit `null` deaktivieren. | `null` |
-| `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`  | Twitter, Facebook, Google+ |
+| `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`  | Twitter, Facebook, Google+ |
 | `data-theme`       | Farbschema auswählen. Verfügbar: `standard`, `grey` und `white`. | `standard` |
 | `data-title`       | Titel der zu teilenden Seite. | Entweder `DC.title`/`DC.creator` oder `<title>` |
 | `data-twitter-via` | User von dem der Tweet ursprünglich stammt. | `null` |
@@ -134,11 +134,14 @@ Bekannte Shariff-Integrationen für Drittanbieter-Systeme:
 
 * [Contao-Integration](https://github.com/hofff/contao-shariff)
 * [Drupal-Modul](https://www.drupal.org/project/shariff)
-* [Joomla 3.4+ Shariff-Plugin](https://github.com/joomla-agency/plg_jooag_shariff)
+* [Joomla! 3 Shariff-Plugin](https://github.com/joomla-agency/plg_jooag_shariff)
+* [MediaWiki Extension] (https://github.com/vonloxley/Shariff-Mediawiki/)
 * [Open Monograph Press-Plugin](https://github.com/langsci/shariff)
+* [Serendipity Plugin](https://github.com/s9y/additional_plugins/tree/master/serendipity_event_social)
 * [SilverStripe-Modul](https://github.com/andrelohmann/silverstripe-shariff)
+* [Symfony ShariffBundle](https://github.com/core23/ShariffBundle)
 * [TYPO3-Plugin rx_shariff](http://typo3.org/extensions/repository/view/rx_shariff)
 * [Wordpress-Plugin shariff-sharing](https://wordpress.org/plugins/shariff-sharing/)
 * [WordPress-Plugin Shariff Wrapper](https://wordpress.org/plugins/shariff/)
-* [Xenforo 1.4 Plugin](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
+* [Xenforo [ITM] ctSSB für Xenforo 1.5](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
 * [Xenforo [WMTech] Social Share Privacy Plugin](https://wmtech.net/products/wmtech-social-share-privacy.41/)

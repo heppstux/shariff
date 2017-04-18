@@ -31,7 +31,10 @@ var Shariff = function(element, options) {
         require('./services/whatsapp'),
         require('./services/xing'),
         require('./services/tumblr'),
-        require('./services/threema')
+        require('./services/threema'),
+        require('./services/weibo'),
+        require('./services/tencent-weibo'),
+        require('./services/qzone')
     ];
 
     // filter available services to those that are enabled and initialize them
@@ -86,7 +89,7 @@ Shariff.prototype = {
             return this.getMeta('DC.title') || this.getTitle();
         },
 
-        mailBody: function() { return '<' + this.getURL() + '>'; },
+        mailBody: function() { return this.getURL(); },
 
         // Media (e.g. image) URL to be shared
         mediaUrl: null,

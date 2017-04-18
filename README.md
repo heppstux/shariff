@@ -15,10 +15,10 @@ Shariff consists of two parts: a simple JavaScript client library and an optiona
 1. Download the [latest release](https://github.com/heiseonline/shariff/releases/latest)
 2. Include CSS in `<head>`:
     * `build/shariff.complete.css` contains all dependencies
-    * use `build/shariff.min.css`, if [Font Awesome](https://github.com/FortAwesome/Font-Awesome) is already included in your site
+    * if [Font Awesome](https://github.com/FortAwesome/Font-Awesome) is already included in your site, use `build/shariff.min.css` 
 3. Include JavaScript right before `</body>`:
     * `build/shariff.complete.js` contains all dependencies
-    * use `build/shariff.min.js`, if [jQuery](https://github.com/jquery/jquery) is already included in your site
+    * if [jQuery](https://github.com/jquery/jquery) is already included in your site, use `build/shariff.min.js`
 4. Insert one or more `<div class="shariff">` elements.
 5. Customize the look using data-* attributes.
 
@@ -96,7 +96,7 @@ Make sure you have installed the [Grunt CLI](http://gruntjs.com/getting-started#
 | `data-media-url` | Media url to be shared (pinterest) | `null` |
 | `data-orientation` | `vertical` will stack the buttons vertically. | `horizontal`  |
 | `data-referrer-track` | A string that will be appended to the share url. Can be disabled using `null`. | `null` |
-| `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema` | `twitter`, `facebook`, `googleplus`, `info` |
+| `data-services`   | An entity-encoded JSON string containing an array of service names to be enabled. Example: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` Available service names: `twitter`, `facebook`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone` | `twitter`, `facebook`, `googleplus`, `info` |
 | `data-theme`       | We include 3 color schemes, `standard`, `grey` and `white`. | `standard` |
 | `data-title`       | Title to be used as share text in Twitter/Whatsapp | page's `DC.title`/`DC.creator` or `<title>` |
 | `data-twitter-via` | Screen name of the user to attribute the Tweet to | `null` |
@@ -133,11 +133,14 @@ This is a list of integrations for third-party systems:
 
 * [Contao integration](https://github.com/hofff/contao-shariff)
 * [Drupal module](https://www.drupal.org/project/shariff)
-* [Joomla 3.4+ Shariff Plugin](https://github.com/joomla-agency/plg_jooag_shariff)
+* [Joomla! 3 Shariff Plugin](https://github.com/joomla-agency/plg_jooag_shariff)
+* [MediaWiki Extension] (https://github.com/vonloxley/Shariff-Mediawiki/)
 * [Open Monograph Press Plugin](https://github.com/langsci/shariff)
+* [Serendipity](https://github.com/s9y/additional_plugins/tree/master/serendipity_event_social)
 * [SilverStripe Module](https://github.com/andrelohmann/silverstripe-shariff)
+* [Symfony ShariffBundle](https://github.com/core23/ShariffBundle)
 * [TYPO3 Plugin rx_shariff](http://typo3.org/extensions/repository/view/rx_shariff)
 * [Wordpress Plugin shariff-sharing](https://wordpress.org/plugins/shariff-sharing/)
 * [WordPress Plugin Shariff Wrapper](https://wordpress.org/plugins/shariff/)
-* [Xenforo 1.4 Plugin](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
+* [Xenforo [ITM] ctSSB for Xenforo 1.5](https://github.com/McAtze/-ITM-ctShariffSocialButtons)
 * [Xenforo [WMTech] Social Share Privacy Plugin](https://wmtech.net/products/wmtech-social-share-privacy.41/)
