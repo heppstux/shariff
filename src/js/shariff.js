@@ -1,6 +1,6 @@
 'use strict';
 
-var $ = require('./dom');
+var $ = require('jquery');
 var url = require('url');
 
 var Shariff = function(element, options) {
