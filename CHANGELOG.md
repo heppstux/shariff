@@ -1,9 +1,40 @@
 # Changelog
 
+## v1.26.1, 2017-07-28
+
+* Added missing `./build` directory.([#246](https://github.com/heiseonline/shariff/issues/246))
+
+## v1.26.0, 2017-07-28
+
+* Added `npm run dev` command.
+* Added tests for the DOM library. (glaszig)
+* Added list of supported sharing services to READMEs.
+* Added `{url}` placeholder to `data-mail-body` option. (stephankellermayr)
+* Fixed Shariff to use `data-title` in favor of `meta[name=DC.title]` if present. ([#143](https://github.com/heiseonline/shariff/issues/143))
+* Fixed Twitter popup opening twice when a tweet is embedded on a page. (Nebel54)
+* Improved service initialization code. ([#188](https://github.com/heiseonline/shariff/issues/188))
+* Made DOM element creation consistent. ([#234](https://github.com/heiseonline/shariff/pull/234))
+
+## 1.25.2 2017-06-13
+
+* Restored the jQuery dependency for the min.js version. (liayn)
+* Added Kirby third party integration. (AndiLeni)
+* Added support for DOM-ready functions. (glaszig)
+* Updated dependencies. (liayn)
+* Fixed shariff initializing before DOM is ready. (theseer)
+* Fixed handling of images in pinterest service. (7oot)
+* Fixed MediaWiki third party integration link. (AndiLeni)
+* Fixed Internet Explorer 11 support. (glaszig, heppstux, liayn)
+
 ## 1.25.1 2017-04-21
 
+* RELEASE reverted!
 * Replaced jQuery with vanilla js. (glaszig)
-* Removed obsolete build artifact. 
+* Removed obsolete build artifact.
+
+## 1.25.0 2017-04-21
+
+* RELEASE reverted!
 
 ## 1.24.1 2016-11-17
 

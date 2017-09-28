@@ -1,4 +1,4 @@
-# Shariff – Schützen und teilen
+# Shariff – Schützen und teilen [![Build Status](https://travis-ci.org/heiseonline/shariff.svg?branch=master)](https://travis-ci.org/heiseonline/shariff)
 
 Um die Privatsphäre ihrer Besucher gegenüber den Social-Media-Netzwerken zu bewahren, können Webseiten-Betreiber mit dem Projekt Shariff eigene Teilen-Buttons integrieren.  [Demo](http://heiseonline.github.io/shariff/)
 
@@ -17,7 +17,8 @@ Shariff besteht aus zwei Teilen. Der erste Teil ist eine einfache JavaScript-Bib
     * `build/shariff.complete.css` enthält alle Abhängigkeiten
     * `build/shariff.min.css` verwenden, wenn [Font Awesome](https://github.com/FortAwesome/Font-Awesome) bereits in Ihrer Seite geladen wird
 3. JavaScript unmittelbar vor `</body>` einbinden:
-    * `build/shariff.min.js`
+    * `build/shariff.complete.js` enthält alle Abhängigkeiten
+    * `build/shariff.min.js` verwenden, wenn [jQuery](https://github.com/jquery/jquery) bereits in der Seite vorhanden ist
 4. Beliebig viele `<div class="shariff">` Elemente einfügen
 5. Mit den unten beschriebenen `data`-Attributen Aussehen und Funktion konfigurieren
 
@@ -42,7 +43,7 @@ Code-Beispiel:
     <div class="shariff" data-backend-url="/path/to/backend" data-url="http://www.example.com/my-article.html" data-theme="grey" data-orientation="vertical"></div>
 
     <!-- vor dem schließenden </body>-Tag -->
-    <script src="/path/to/shariff.min.js"></script>
+    <script src="/path/to/shariff.complete.js"></script>
 </body>
 </html>
 ```
@@ -61,7 +62,8 @@ Dann kann Shariff im eigenen Skript initialisiert und an DOM-Elemente gebunden w
 ```js
 // my-app.js
 var Shariff = require('shariff');
-var buttonsContainer = document.querySelector('.some-selector');
+var $ = require('jquery');
+var buttonsContainer = $('.some-selector');
 new Shariff(buttonsContainer, {
     orientation: 'vertical'
 });
@@ -88,13 +90,13 @@ Für den Aufruf von `grunt demo` muss [Grunt CLI](http://gruntjs.com/getting-sta
 | `data-flattr-category` | Kategorie für Flattr-Spende. | `null` |
 | `data-flattr-user` | Benutzer, der die Flattr-Spende erhält. | `null` |
 | `data-lang`      | Lokalisierung auswählen. Verfügbar: `bg`, `de`, `en`, `es`, `fi`, `hr`, `hu`, `ja`, `ko`, `no`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `tr`, `zh` | `de` |
-| `data-mail-body` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Body verwendet. | siehe `data-url` |
+| `data-mail-body` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Body verwendet. Der Mail-Body-Text sollte den Platzhalter `{url}` enthalten. Dieser wird durch die zu teilende URL ersetzt. | siehe `data-url` |
 | `data-mail-subject` | Wenn `data-mail-url` ein `mailto:`-Link ist, wird dieser Wert als Mail-Betreff verwendet. | siehe `data-title` |
 | `data-mail-url`  | Der Link des `mail`-Buttons | `?view=mail` |
 | `data-media-url` | Zu teilendes Bild (pinterest) | `null` |
 | `data-orientation` | Anordnung der Buttons. Verfügbar: `horizontal`, `vertical` | `horizontal`  |
 | `data-referrer-track` | Wenn angegeben, wird dieser String an die geteilte URL angehängt. Mit `null` deaktivieren. | `null` |
-| `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`  | Twitter, Facebook, Google+ |
+| `data-services`   | Liste der Services, die verwendet werden sollen. Für die Verwendung im `data`-Attribut muss die Angabe Entity-enkodiert werden. Die Reihenfolge wird berücksichtigt. Beispiel: `data-services="[&quot;facebook&quot;,&quot;googleplus&quot;]"` <br> Verfügbare Dienste: `twitter`, `facebook`, `googleplus`, `linkedin`, `pinterest`, `xing`, `whatsapp`, `mail`, `info`, `addthis`, `tumblr`, `flattr`, `diaspora`, `reddit`, `stumbleupon`, `threema`, `weibo`, `tencent-weibo`, `qzone`, `print`  | Twitter, Facebook, Google+ |
 | `data-theme`       | Farbschema auswählen. Verfügbar: `standard`, `grey` und `white`. | `standard` |
 | `data-title`       | Titel der zu teilenden Seite. | Entweder `DC.title`/`DC.creator` oder `<title>` |
 | `data-twitter-via` | User von dem der Tweet ursprünglich stammt. | `null` |
@@ -111,6 +113,30 @@ Shariff unterstützt folgende Browser:
 - Safari
 
 Die jeweils aktuell letzten und vorletzten Versionen von Firefox, Google Chrome, Internet Explorer/Edge und Safari werden untersützt.
+
+## Unterstützte Services
+
+Shariff unterstützt folgende Social-Sharing-Services:
+
+- AddThis
+- diaspora*
+- facebook
+- Flattr
+- Google+
+- LinkedIn
+- Mail
+- Pinterest
+- Print
+- Qzone
+- reddit
+- StumbleUpon
+- Tencent Weibo
+- Threema
+- Tumblr
+- Twitter
+- Weibo
+- WhatsApp
+- XING
 
 ## Backends
 
@@ -133,7 +159,8 @@ Bekannte Shariff-Integrationen für Drittanbieter-Systeme:
 * [Contao-Integration](https://github.com/hofff/contao-shariff)
 * [Drupal-Modul](https://www.drupal.org/project/shariff)
 * [Joomla! 3 Shariff-Plugin](https://github.com/joomla-agency/plg_jooag_shariff)
-* [MediaWiki Extension] (https://github.com/vonloxley/Shariff-Mediawiki/)
+* [Kirby-CMS Shariff-Plugin](https://github.com/SpicyWeb-de/kirby-plugin-shariff)
+* [MediaWiki Extension](https://github.com/vonloxley/Shariff-Mediawiki/)
 * [Open Monograph Press-Plugin](https://github.com/langsci/shariff)
 * [Serendipity Plugin](https://github.com/s9y/additional_plugins/tree/master/serendipity_event_social)
 * [SilverStripe-Modul](https://github.com/andrelohmann/silverstripe-shariff)
